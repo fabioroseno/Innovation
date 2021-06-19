@@ -8,4 +8,8 @@ import lombok.Data;
 public class Customer {
     private String name;
     private int points;
+    
+    public boolean hasLessHundredPoints() {
+        return this.points < 100;
+    }
 }
