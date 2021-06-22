@@ -1,7 +1,9 @@
 package com.rs.test;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.rs.test.model.Customer;
@@ -13,6 +15,8 @@ public class Applications {
 		streamFilterMoreThan100Points();
 		streamFilterLessThan100Points();
 		streamFilterMoreThan100PointsCharles();
+		myImutableList();
+		myVarOfMethod();
 	}
 	
 	static void lombokTesting() {
@@ -61,6 +65,26 @@ public class Applications {
 		
 		System.out.println(" --- streamFilterMoreThan100PointsCharles");
 		customersFilter.forEach(System.out::println);
+	}
+	
+	static void myImutableList() {
+		List<String> imutableNames = List.of("nameOne", "nameTwo", "nameThree");
+
+		//imutableNames.add("nameFour"); DON'T ALLOWED
+		
+		imutableNames.stream().
+		forEach(System.out::println);
+	}
+
+	static void myVarOfMethod() {
+		var variable = new HashMap<String, Object>();
+		
+		variable.put("key1", 5);
+		variable.put("key2", 7);
+		
+		for(Map.Entry<String, Object> entry : variable.entrySet()) {
+			System.out.println(entry.getKey() + ": " + entry.getValue());
+		}
 	}
 
 }
