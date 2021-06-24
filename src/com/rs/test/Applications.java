@@ -12,7 +12,8 @@ public class Applications {
 
 	public static void main(String[] args) {
 
-		System.out.println(" --- JAVA 8");
+		System.out.println(" --- JAVA 9+");
+		currentProcess();
 		lombokTesting();
 		streamFilterMoreThan100Points();
 		streamFilterLessThan100Points();
@@ -23,6 +24,17 @@ public class Applications {
 		newCase();
 		System.out.println(" --- JAVA 15");
 		textBlock();
+		
+	}
+
+	static void currentProcess() {
+
+		System.out.println(" --- START - currentProcess");
+		System.out.println("Java PID: " + ProcessHandle.current().pid());
+		System.out.println(" --- END - currentProcess");
+		System.out.println(" ------------------------");
+		
+		
 	}
 	
 	static void lombokTesting() {
